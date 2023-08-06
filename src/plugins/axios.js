@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BASE_URL = 'https://api.chucknorris.io/'
+const BASE_URL = process.env.VUE_APP_BASE_URL
 
 const AxiosPlugin = {
   install(Vue, store) {
