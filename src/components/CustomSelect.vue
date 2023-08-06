@@ -78,6 +78,7 @@ export default {
     overflow-y: auto;
     background-color: #ffffff;
     transition: 0.3s;
+    z-index: 2;
     li {
       padding: 10px;
       cursor: pointer;
