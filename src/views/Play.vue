@@ -14,8 +14,7 @@ export default {
       loading: false,
       intervalId: null,
       updateJokeTime: 15,
-      result: null,
-      showResult: false
+      result: null
     }
   },
 
@@ -57,13 +56,12 @@ export default {
       console.log('button:', button)
 
       if ((this.joke.value.length % 2 === 0) === button) {
-        await this.getJokeByCategory()
         this.result = 'success'
+        await this.getJokeByCategory()
       } else {
         this.result = 'error'
       }
-      this.showResult = true
-      setTimeout(() => this.showResult = false, 3000)
+      setTimeout(() => this.result = null, 3000)
     },
 
     timer() {
@@ -109,7 +107,7 @@ export default {
 
 <template>
   <div class="play">
-    <AnswerStatus v-if="showResult" :type="result" />
+    <AnswerStatus v-if="result" :type="result" />
 
     <div class="play__logo">
       <router-link to="/">
